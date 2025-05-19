@@ -1,0 +1,40 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+      - feature/**
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: ☁️ Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.1'
+
+      - name: Disable Flutter analytics
+        run: flutter --disable-analytics    
+
+      - name: 📦 Install dependencies
+        run: flutter pub get
+
+      - name: ✅ Analyze
+        run: flutter analyze
+      
+       - name: 📌 Check Dart version
+        run: dart --version
+
+      - name: 🧪 Run tests
+        run: flutter test

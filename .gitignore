@@ -33,8 +33,10 @@ migrate_working_dir/
 .pub/
 /build/
 
-#TMDBApiKey
-.env
+
+# Env file
+assets/config/.env
+
 
 # Symbolication related
 app.*.symbols

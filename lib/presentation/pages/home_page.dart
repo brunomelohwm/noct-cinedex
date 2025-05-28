@@ -6,7 +6,7 @@ import 'package:noct_cinedex/presentation/get_movie_popular_cubit/get_movie_popu
 
 import 'package:noct_cinedex/presentation/get_movie_popular_cubit/get_movie_popular_state.dart';
 import 'package:noct_cinedex/presentation/widgets/loding_widget.dart';
-import 'package:noct_cinedex/presentation/widgets/movie_list_widget.dart';
+import 'package:noct_cinedex/presentation/widgets/movie_grid_view_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
               return LoadingWidget();
             } else if (state is GetMoviePopularLoaded) {
               final movies = state.movies;
-              return MovieList(movies: movies);
+              return MovieGridView(movies: movies);
             } else if (state is GetMoviePopularError) {
               return Center(child: Text(state.message));
             }

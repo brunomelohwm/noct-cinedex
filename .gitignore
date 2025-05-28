@@ -34,7 +34,7 @@ migrate_working_dir/
 /build/
 
 #TMDBApiKey
-lib/core/config/api_keys.dart
+.env
 
 # Symbolication related
 app.*.symbols

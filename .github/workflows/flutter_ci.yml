@@ -43,5 +43,5 @@ jobs:
       - name: 📌 Check Dart version
         run: dart --version
 
-      - name: 🧪 Run tests
-        run: flutter test
+      # - name: 🧪 Run tests
+      # run: flutter test

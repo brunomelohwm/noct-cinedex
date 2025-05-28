@@ -29,7 +29,6 @@ class MovieModel extends MovieEntity {
          voteAverage: voteAverageModel,
        );
   factory MovieModel.fromMap(Map<String, dynamic> map) {
-    print('JSON recebido para MovieModel: $map');
     return MovieModel(
       idModel: map['id'] as int,
       genresIdModel: List<int>.from(map['genre_ids']),

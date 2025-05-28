@@ -22,7 +22,7 @@ jobs:
       - name: ☁️ Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.1'
+          flutter-version: '3.29.3'
 
       - name: Disable Flutter analytics
         run: flutter --disable-analytics    
@@ -33,7 +33,7 @@ jobs:
       - name: ✅ Analyze
         run: flutter analyze
       
-       - name: 📌 Check Dart version
+      - name: 📌 Check Dart version
         run: dart --version
 
       - name: 🧪 Run tests

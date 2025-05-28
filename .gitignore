@@ -33,6 +33,11 @@ migrate_working_dir/
 .pub/
 /build/
 
+
+# Env file
+assets/config/.env
+
+
 # Symbolication related
 app.*.symbols
 

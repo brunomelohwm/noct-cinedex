@@ -33,7 +33,7 @@ jobs:
       - name: ✅ Analyze
         run: flutter analyze
       
-       - name: 📌 Check Dart version
+      - name: 📌 Check Dart version
         run: dart --version
 
       - name: 🧪 Run tests

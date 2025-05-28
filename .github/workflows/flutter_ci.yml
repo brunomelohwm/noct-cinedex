@@ -21,7 +21,7 @@ jobs:
       - name: 🔄 Checkout repository
         uses: actions/checkout@v3
 
-       - name: 🛠️ Create .env file
+      - name: 🛠️ Create .env file
         run: |
           mkdir -p assets/config
           echo "TMDB_API_KEY=${{ secrets.TMDB_API_KEY }}" > assets/config/.env

@@ -1,5 +1,4 @@
 import 'package:get_it/get_it.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:noct_cinedex/core/network/network_info.dart';
 import 'package:noct_cinedex/data/datasource/movie_remote_data_source.dart';
 import 'package:noct_cinedex/data/repositories/movie_repository_impl.dart';
@@ -13,12 +12,9 @@ final sl = GetIt.instance;
 
 void setup() {
   // External
-  sl.registerLazySingleton(() => InternetConnectionChecker.createInstance());
   sl.registerLazySingleton(() => DioClient.create());
 
-  sl.registerLazySingleton<NetworkInfo>(
-    () => NetworkInfoImpl(connectionChecker: sl()),
-  );
+  sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl());
 
   // DataSources
   sl.registerLazySingleton<MovieRemoteDataSource>(

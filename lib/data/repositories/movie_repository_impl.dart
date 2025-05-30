@@ -16,15 +16,17 @@ class MovieRepositoryImpl implements MovieRepository {
 
   @override
   Future<Either<Failure, List<MovieEntity>>> getPopularMovies() async {
-    if (await networkInfo.isConnected) {
+    final isConnected = await networkInfo.isConnected;
+
+    if (isConnected) {
       try {
         final movieModel = await remoteDataSource.getPopularMovies();
         return Right(movieModel);
       } catch (e) {
-        return Left(ServerFailure());
+        return Left(ServerFailure(message: e.toString()));
       }
     } else {
-      return Left(ConnectionFailure());
+      return Left(NetworkFailure(message: 'Sem conexão com a internet.'));
     }
   }
 }

@@ -18,12 +18,26 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
 
       if (response.statusCode == 200) {
         final List results = response.data['results'];
+
         return results.map((json) => MovieModel.fromMap(json)).toList();
       } else {
-        throw Exception('Erro ao buscar filmes populares');
+        throw DioException(
+          requestOptions: response.requestOptions,
+          response: response,
+          type: DioExceptionType.badResponse,
+          error: "Erro ao buscar filmes populares: ${response.statusCode}",
+        );
       }
     } catch (e) {
-      throw Exception("Erro na requisição: $e ");
+      if (e is DioException) {
+        rethrow;
+      } else {
+        throw DioException(
+          requestOptions: RequestOptions(path: ApiUrls.popularMoviesPath),
+          type: DioExceptionType.unknown,
+          error: 'erro inesperado: ${e.toString()}',
+        );
+      }
     }
   }
 }

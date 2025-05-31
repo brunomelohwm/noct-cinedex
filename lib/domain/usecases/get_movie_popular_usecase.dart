@@ -12,11 +12,7 @@ class GetMoviePopularUseCase implements Usecase<List<MovieEntity>, NoParams> {
   Future<Either<Failure, List<MovieEntity>>> call({
     required NoParams params,
   }) async {
-    try {
-      final movies = await movieRepository.getPopularMovies();
-      return movies;
-    } catch (e) {
-      return Left(ServerFailure());
-    }
+    final movies = await movieRepository.getPopularMovies();
+    return movies;
   }
 }

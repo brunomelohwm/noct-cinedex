@@ -43,5 +43,27 @@ jobs:
       - name: 📌 Check Dart version
         run: dart --version
 
-      # - name: 🧪 Run tests
-      # run: flutter test
+      - name: 🧪 Run tests with coverage
+        run: |
+          flutter test --concurrency=2 --coverage
+          sudo apt-get install lcov
+          genhtml coverage/lcov.info -o coverage/html
+
+      - name: 📊 Check coverage percentage
+        run: |
+          lines_found=$(grep -o "LF:[0-9]*" coverage/lcov.info | cut -d ':' -f 2 | paste -sd+ - | bc)
+          lines_hit=$(grep -o "LH:[0-9]*" coverage/lcov.info | cut -d ':' -f 2 | paste -sd+ - | bc)
+
+          if [[ $lines_found -gt 0 ]]; then
+            percentage=$((lines_hit * 100 / lines_found))
+            echo "Coverage is $percentage%"
+            if [[ $percentage -lt 70 ]]; then
+              echo "❌ Error: Coverage below threshold (70%)"
+              exit 1
+            else
+              echo "🧪✅ Coverage meets threshold"
+            fi
+          else
+            echo "⚠️ No coverage info found"
+            exit 1
+          fi

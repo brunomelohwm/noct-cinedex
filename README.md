@@ -11,7 +11,7 @@ This app consumes a popular movies API (TMDB), showing cards with basic details 
 While the final feature might seem simple, the underlying work is detailed and thorough:
 
 - Clean Architecture structure  
-- Data Source, Repository, Use Case, Cubit/Bloc, and Presentation layers  
+- Data Source, Repository, Use Case, Cubit(state management), and Presentation layers  
 - Robust error handling  
 - Unit tests covering models, datasource, repository, use cases, and bloc  
 - CI pipeline set up with GitHub Actions, including static analysis, tests with a minimum 70% coverage threshold, and coverage reports

@@ -24,14 +24,14 @@ This project serves as a learning space and technical showcase — proving that 
 
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/your-username/flutter-movie-app.git
+   git clone https://github.com/brunomelohwm/noct_cinedex.git
 
 Project Structure:
 
 lib/
  ├── data/            # Data Sources e Repositories
  ├── domain/          # UseCases e Modelos de domínio
- ├── presentation/    # UI, Cubit/BLoC
+ ├── presentation/    # UI, Cubit(state management)
  ├── core/            # Tratamento de erros e utilitários
 assets/
  └── config/          # Configurações, incluindo .env

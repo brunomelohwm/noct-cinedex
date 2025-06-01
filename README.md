@@ -28,14 +28,16 @@ This project serves as a learning space and technical showcase — proving that 
 
 ## 📁 Project Structure
 
+```
 lib/
-├── core/ # Error handling, constants, and utilities
-├── data/ # Data sources and repositories
-├── domain/ # Entities and use cases
-├── presentation/ # UI and state management (Cubit)
+├── core/           # Error handling, constants, and utilities
+├── data/           # Data sources and repositories
+├── domain/         # Entities and use cases
+├── presentation/   # UI and state management (Cubit)
 assets/
-└── config/ # App configuration (.env)
-test/ # Unit tests
+└── config/         # App configuration (.env)
+test/               # Unit tests
+```
 
 
 Next Steps

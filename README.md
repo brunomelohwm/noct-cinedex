@@ -26,16 +26,16 @@ This project serves as a learning space and technical showcase — proving that 
    ```bash
    git clone https://github.com/brunomelohwm/noct_cinedex.git
 
-Project Structure:
+## 📁 Project Structure
 
 lib/
- ├── data/            # Data Sources e Repositories
- ├── domain/          # UseCases e Modelos de domínio
- ├── presentation/    # UI, Cubit(state management)
- ├── core/            # Tratamento de erros e utilitários
+├── core/ # Error handling, constants, and utilities
+├── data/ # Data sources and repositories
+├── domain/ # Entities and use cases
+├── presentation/ # UI and state management (Cubit)
 assets/
- └── config/          # Configurações, incluindo .env
-test/                 # Testes unitários
+└── config/ # App configuration (.env)
+test/ # Unit tests
 
 
 Next Steps

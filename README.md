@@ -1,16 +1,49 @@
-# noct_cinedex
+# noct_cinedex -  Flutter Movie App
 
-A new Flutter project.
+A personal Flutter project focused on displaying popular movies with a clean and organized UI, following clean architecture and development best practices.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## About the Project
 
-A few resources to get you started if this is your first Flutter project:
+This app consumes a popular movies API (TMDB), showing cards with basic details like title, short synopsis, rating, and release date.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+While the final feature might seem simple, the underlying work is detailed and thorough:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Clean Architecture structure  
+- Data Source, Repository, Use Case, Cubit/Bloc, and Presentation layers  
+- Robust error handling  
+- Unit tests covering models, datasource, repository, use cases, and bloc  
+- CI pipeline set up with GitHub Actions, including static analysis, tests with a minimum 70% coverage threshold, and coverage reports
+
+This project serves as a learning space and technical showcase — proving that well-crafted code is about care and discipline, not just functionality.
+
+---
+
+## Running the Project
+
+1. Clone the repo:  
+   ```bash
+   git clone https://github.com/your-username/flutter-movie-app.git
+
+Project Structure:
+
+lib/
+ ├── data/            # Data Sources e Repositories
+ ├── domain/          # UseCases e Modelos de domínio
+ ├── presentation/    # UI, Cubit/BLoC
+ ├── core/            # Tratamento de erros e utilitários
+assets/
+ └── config/          # Configurações, incluindo .env
+test/                 # Testes unitários
+
+
+Next Steps
+ - Implement more screens and features
+
+ - Improve UX/UI with animations and feedback
+
+ - Expand test coverage
+
+
+

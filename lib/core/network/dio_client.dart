@@ -10,6 +10,7 @@ class DioClient {
         baseUrl: ApiUrls.baseApiUrl,
         connectTimeout: const Duration(seconds: 10),
         receiveTimeout: const Duration(seconds: 10),
+        queryParameters: {'language': 'pt-BR'},
       ),
     )..interceptors.add(ApiKeyInterceptor(dotenv.env['TMDB_API_KEY'] ?? ''));
 

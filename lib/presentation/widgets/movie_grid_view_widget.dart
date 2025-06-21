@@ -17,12 +17,12 @@ class MovieGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     final config = ResponsiveConfig.of(screenType);
     return GridView.builder(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(6),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: config.crossAxisCount,
         mainAxisExtent: config.mainAxisExtent,
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
+        mainAxisSpacing: 6,
+        crossAxisSpacing: 6,
       ),
       itemCount: movies.length,
       itemBuilder: (_, int index) {

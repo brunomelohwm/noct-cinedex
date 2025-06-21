@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:noct_cinedex/core/responsive/responsive_builder.dart';
 
 import 'package:noct_cinedex/injection_container.dart' as di;
 import 'package:noct_cinedex/presentation/get_movie_popular_cubit/get_movie_popular_cubit.dart';
@@ -23,7 +24,11 @@ class HomePage extends StatelessWidget {
               return LoadingWidget();
             } else if (state is GetMoviePopularLoaded) {
               final movies = state.movies;
-              return MovieGridView(movies: movies);
+              return ResponsiveBuilder(
+                builder: (context, screenType) {
+                  return MovieGridView(movies: movies, screenType: screenType);
+                },
+              );
             } else if (state is GetMoviePopularError) {
               return Center(child: Text(state.message));
             }

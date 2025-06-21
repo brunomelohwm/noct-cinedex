@@ -8,12 +8,7 @@ Widget buildFrontCard(String imageUrl) {
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     child: ClipRRect(
       borderRadius: BorderRadius.circular(12),
-      child: Image.network(
-        imageUrl,
-        height: 300,
-        width: 200,
-        fit: BoxFit.cover,
-      ),
+      child: Image.network(imageUrl, height: 300, width: 200, fit: BoxFit.fill),
     ),
   );
 }

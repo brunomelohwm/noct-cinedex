@@ -18,7 +18,7 @@ class MovieBackCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         child: Stack(
           children: [
-            Image.network(imageUrl, height: 300, width: 200, fit: BoxFit.cover),
+            Image.network(imageUrl, height: 300, width: 200, fit: BoxFit.fill),
             Container(
               height: 300,
               width: 200,

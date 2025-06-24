@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:noct_cinedex/core/responsive/responsive_config.dart';
 import 'package:noct_cinedex/core/responsive/responsive_text_style.dart';
 import 'package:noct_cinedex/core/responsive/screen_type.dart';
 import 'package:noct_cinedex/domain/entities/movies/movie_entity.dart';
